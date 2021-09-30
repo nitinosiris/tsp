@@ -37,7 +37,7 @@ def A_star(inp_graph, N, src):
         if check_for_exactly_once_visited(inp_graph , visited):
             print("-----------------------------------------------------------------")
             print("All nodes are visited exactly once")
-            print(str(visited + [src]))
+            print(str(visited))
 
             x = visited[len(visited) -1]
             e = (x, src)
@@ -47,6 +47,7 @@ def A_star(inp_graph, N, src):
                 print("Prune above path :)")
                 continue
             else:
+                print("FN = " + str(f_n_parent))
                 visited.remove(src)
 
         # get edges of current node
