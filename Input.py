@@ -10,6 +10,7 @@ G = nx.Graph(G)
 list(G.edges(data=True))
 source = list(G.edges())
 source, x = source[0]
+print("-----------------------------------------------------------------")
 print("source is " + str(source))
 
 

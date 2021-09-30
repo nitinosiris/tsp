@@ -84,6 +84,7 @@ def Start_a_star():
     path, count = A_star(input_graph, no_of_nodes, source)    
     print("FN = " + str(path))
     print("Max size of FringList during execution = " + str(count))
+    print("-----------------------------------------------------------------")
 
 
 
