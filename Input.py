@@ -1,7 +1,9 @@
 from Import import *
 
+print("Enter the name of file on which you want to run this Alog : ")
+inp = input()
 
-G = nx.read_edgelist("data4.txt", nodetype=int, data=(("weight", int),))
+G = nx.read_edgelist(inp, nodetype=int, data=(("weight", int),))
 G = nx.Graph(G)
 
 

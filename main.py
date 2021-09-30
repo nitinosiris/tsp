@@ -9,7 +9,7 @@ def A_star(inp_graph, N, src):
     # ans
     ans = 0
     # state
-    count = 0
+    count = 1
     # GN
     GN = 0
     # ct = []
@@ -22,16 +22,16 @@ def A_star(inp_graph, N, src):
     pq.put((h_n + GN, h_n, GN, src, copy.deepcopy(visited), src))
     # std bfs jaisa
     while pq.qsize() != 0:
-        count = max(pq.qsize(), count)
         data = pq.get()
         f_n_parent, h_n_parent, g_n_parent, node, visited, parent = data
+        count = max(pq.qsize(), count)
         ans = f_n_parent
         popped = node
         # make node lst
         visited.append(node)
-        # print("-----------------------------------------------------------------")
         if goal_test(inp_graph , visited):
             # count = len(list(heap))
+            print("-----------------------------------------------------------------")
             print("Goal test ran once " + str(visited + [src]))
             # print(visited[len(visited) -1])
             x = visited[len(visited) -1]
@@ -67,6 +67,7 @@ def A_star(inp_graph, N, src):
                 break
             # push into heap
             pq.put((h_n + GN, h_n, GN, u, copy.deepcopy(visited),node))
+            # count = count + 1
         
     if pq.qsize() == 0:
         # print("We haven't traversed all nodes and heap is empty")
@@ -82,7 +83,7 @@ def Start_a_star():
     # print_graph(input_graph, 0)
     path, count = A_star(input_graph, no_of_nodes, source)    
     print("FN = " + str(path))
-    print("Max size of heap during runtime = " + str(count))
+    print("Max size of FringList during execution = " + str(count))
 
 
 
