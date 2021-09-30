@@ -1,13 +1,12 @@
 from Input import *
 from Utility import *
 
+def goal_test(src, visited):
+    if src == visited[len(visited)-1] and len(visited)!=1:
+        return True
+    return False
+
 def A_star(inp_graph, N, src):
-    # flag
-    flag = 0
-    # var
-    popped = 0
-    # ans
-    ans = 0
     # state
     count = 1
     # GN
@@ -25,24 +24,31 @@ def A_star(inp_graph, N, src):
         data = pq.get()
         f_n_parent, h_n_parent, g_n_parent, node, visited, parent = data
         count = max(pq.qsize(), count)
-        ans = f_n_parent
-        popped = node
         # make node lst
         visited.append(node)
-        if goal_test(inp_graph , visited):
-            # count = len(list(heap))
+
+        if goal_test(src, visited):
+            visited = [src] + visited
             print("-----------------------------------------------------------------")
-            print("Goal test ran once " + str(visited + [src]))
-            # print(visited[len(visited) -1])
+            print("Path Followed is ")
+            print(visited)
+            return f_n_parent, count
+
+        if check_for_exactly_once_visited(inp_graph , visited):
+            print("-----------------------------------------------------------------")
+            print("All nodes are visited exactly once")
+            print(str(visited + [src]))
+
             x = visited[len(visited) -1]
             e = (x, src)
+
             if not inp_graph.has_edge(*e):
                 print("No direct edges between " + str(x) + " and " + str(src))
                 print("Prune above path :)")
                 continue
             else:
-                ans += inp_graph[visited[len(visited)-1]][src].get('weight')
-                return ans, count
+                visited.remove(src)
+
         # get edges of current node
         edges = []
         for u, v, weight in inp_graph.edges.data("weight"):
@@ -53,11 +59,10 @@ def A_star(inp_graph, N, src):
                     edges.append(u)
         # push all those childs into heap
         for u in edges:
-            # deepcopy for aug graph
             temp = copy.deepcopy(inp_graph)
-            # create augmented graph
+
             temp = remove_list_of_nodes_from_graph(src, temp, visited + [u])
-            # generate MST of augmented graph
+
             h_n = get_h_n_and_mst(temp)
             # edge wt + parent's gn
             GN = get_g_n(inp_graph, node, u, g_n_parent)
@@ -72,7 +77,7 @@ def A_star(inp_graph, N, src):
     if pq.qsize() == 0:
         # print("We haven't traversed all nodes and heap is empty")
         print("Solution does not exist")
-        print("Fail")
+        # print("Fail")
         ans = 0
     return ans, count
 

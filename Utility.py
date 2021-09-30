@@ -57,7 +57,6 @@ def get_h_n_and_mst(inp_graph):
 
 #works
 def remove_list_of_nodes_from_graph(src, inp_graph, lst):
-    # lst = visited + [u]
     for i in lst:
         if int(i) != src:
             if int(i) in inp_graph:
@@ -67,7 +66,7 @@ def remove_list_of_nodes_from_graph(src, inp_graph, lst):
 
 
 #works
-def goal_test(input_graph ,visited):
+def check_for_exactly_once_visited(input_graph ,visited):
     lst = list(input_graph)
     for i in lst:
         if i not in visited:
