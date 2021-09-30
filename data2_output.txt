@@ -1,0 +1,29 @@
+Enter the name of file on which you want to run this Alog : 
+data2.txt
+-----------------------------------------------------------------
+source is 0
+No of nodes in graph 6
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 2, 5, 4, 3]
+No direct edges between 3 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 4, 5, 2, 3, 1]
+FN = 11
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 4, 5, 2, 1, 3]
+No direct edges between 3 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 3, 2, 5, 4]
+FN = 8
+-----------------------------------------------------------------
+Path Followed is 
+[0, 1, 3, 2, 5, 4, 0]
+FN = 12
+Max size of FringList during execution = 6
+-----------------------------------------------------------------

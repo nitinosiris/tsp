@@ -1,0 +1,83 @@
+Enter the name of file on which you want to run this Alog : 
+-----------------------------------------------------------------
+source is 0
+No of nodes in graph 9
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 7, 6, 5, 4, 3, 2, 8]
+No direct edges between 8 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 7, 6, 8, 2, 5, 4, 3]
+No direct edges between 3 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 2, 8, 7, 6, 5, 4, 3]
+No direct edges between 3 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 2, 8, 7, 6, 5, 3, 4]
+No direct edges between 4 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 7, 8, 6, 5, 2, 3, 4]
+No direct edges between 4 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 7, 6, 8, 2, 3, 4, 5]
+No direct edges between 5 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 7, 6, 8, 2, 5, 3, 4]
+No direct edges between 4 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 7, 8, 2, 3, 4, 5, 6]
+No direct edges between 6 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 7, 6, 8, 2, 3, 5, 4]
+No direct edges between 4 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+No direct edges between 8 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 2, 3, 4, 5, 6, 8, 7]
+FN = 53
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 1, 7, 8, 6, 5, 4, 3, 2]
+No direct edges between 2 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 7, 1, 2, 8, 6, 5, 4, 3]
+No direct edges between 3 and 0
+Prune above path :)
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 7, 8, 6, 5, 4, 3, 2, 1]
+FN = 57
+-----------------------------------------------------------------
+All nodes are visited exactly once
+[0, 7, 1, 2, 8, 6, 5, 3, 4]
+No direct edges between 4 and 0
+Prune above path :)
+-----------------------------------------------------------------
+Path Followed is 
+[0, 1, 2, 3, 4, 5, 6, 8, 7, 0]
+FN = 61
+Max size of FringList during execution = 24
+-----------------------------------------------------------------
