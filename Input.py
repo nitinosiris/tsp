@@ -5,6 +5,15 @@ inp = input()
 
 G = nx.read_edgelist(inp, nodetype=int, data=(("weight", int),))
 G = nx.Graph(G)
+lst = []
+for s, d, wt in G.edges(data=True):
+    wt = wt.get('weight')
+    e = (s, d, wt)
+    if wt == 0:
+        lst.append(e)
+
+for i in lst:
+    G.remove_edge(*i[:2])
 
 
 list(G.edges(data=True))
